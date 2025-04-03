@@ -1,3 +1,4 @@
+﻿
 import numpy as np
 import tensorflow as tf
 import matplotlib.pyplot as plt
@@ -5,6 +6,13 @@ from mpl_toolkits.mplot3d import Axes3D
 from scipy.interpolate import griddata
 import time
 import matplotlib.animation as animation
+
+
+#from tensorflow.python.client import device_lib
+#print(device_lib.list_local_devices())
+print(tf.__version__)
+print(tf.config.list_physical_devices('GPU'))
+
 
 # 确保使用TensorFlow 2.x和eager execution模式
 tf.compat.v1.disable_eager_execution()

@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  tensorflow:
+    image: tensorflow/tensorflow:2.14.0-gpu-jupyter
+    #command: sh -c "pip install -r /tf/notebooks/requirements.txt && apt-get update && apt-get install -y ffmpeg"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/tf/notebooks
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+
